@@ -1,3 +1,4 @@
 .python-version
 __cache__/
 *.pyc
+help/
