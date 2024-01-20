@@ -18,6 +18,7 @@ templates = Jinja2Templates(directory="templates")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+
 @app.get("/users/")
 def users_list(request: Request):
     users = [
@@ -29,3 +30,8 @@ def users_list(request: Request):
         "count": len(users),
         "results": users
     }
+
+
+@app.post("/users/")
+def create_user(user: User):
+    return user
